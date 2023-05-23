@@ -37,7 +37,7 @@ namespace Os {
             Task(); //!< constructor
             virtual ~Task(); //!< destructor
 
-            TaskStatus start(const Fw::StringBase &name, taskRoutine routine, void* arg, NATIVE_UINT_TYPE priority = TASK_DEFAULT, NATIVE_UINT_TYPE stackSize = TASK_DEFAULT,  NATIVE_UINT_TYPE cpuAffinity = TASK_DEFAULT, NATIVE_UINT_TYPE identifier = TASK_DEFAULT); //!< start the task
+            TaskStatus start(const Fw::StringBase &name, taskRoutine routine, void* arg, NATIVE_UINT_TYPE priority = TASK_DEFAULT, NATIVE_UINT_TYPE stackSize = TASK_DEFAULT,  NATIVE_UINT_TYPE cpuAffinity = TASK_DEFAULT, NATIVE_UINT_TYPE identifier = TASK_DEFAULT, void* stack = nullptr); //!< start the task
 
             // Deprecated: only the name, routine, and argument are **required** parameters.  This ordering of parameters is therefore inappropriate and will be removed in the future
             DEPRECATED(TaskStatus start(const Fw::StringBase &name, NATIVE_INT_TYPE identifier, NATIVE_INT_TYPE priority, NATIVE_INT_TYPE stackSize, taskRoutine routine, void* arg, NATIVE_INT_TYPE cpuAffinity = static_cast<NATIVE_INT_TYPE>(TASK_DEFAULT)),
