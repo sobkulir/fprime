@@ -4,12 +4,12 @@
 #include <FpConfig.hpp>
 
 namespace Os {
-
-    class Mutex {
+    template <typename T>
+    class MutexImpl {
         public:
 
-            Mutex(); //!<  Constructor. Mutex is unlocked when created
-            virtual ~Mutex(); //!<  Destructor
+            MutexImpl(); //!<  Constructor. Mutex is unlocked when created
+            virtual ~MutexImpl(); //!<  Destructor
 
             void lock(); //!<  lock the mutex
             void unLock(); //!<  unlock the mutex
@@ -17,7 +17,7 @@ namespace Os {
 
         private:
 
-            POINTER_CAST m_handle; //!<  Stored handle to mutex
+            T m_handle; //!<  Stored handle to mutex
     };
 }
 

@@ -28,4 +28,8 @@ static_assert((std::numeric_limits<double>::is_iec559 == true) && (std::numeric_
               "The 64-bit floating point type does not conform to the IEEE-754 standard.");
 #endif
 #endif
+
+// Needs to be provided by the platform.
+#include <OsTypes.hpp>
+
 #endif  // End FW_BASIC_TYPES_HPP
